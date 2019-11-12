@@ -1,11 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- xmlns  extend  markable language name space  
- xmlns:aop  aop:名称    http://www.springframework.org/schema/aop key
-  后边一定是成对的出现。
- http://www.springframework.org/schema/aop/spring-aop.xsd 
- 
-   
- -->
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:aop="http://www.springframework.org/schema/aop"
@@ -18,7 +11,7 @@
 
 	<!-- 1、注解扫描器 -->
 	<!-- todo -->
-	<context:component-scan base-package="com.zhukaige" >
+	<context:component-scan base-package="com.liang" >
 		<!-- 排除要要扫描的controller -->
 		<context:exclude-filter type="annotation"
 			expression="org.springframework.stereotype.Controller" />
@@ -84,7 +77,7 @@
 		<!-- 配置切点表达式 -->
 		<!-- todo -->
 		<aop:pointcut 
-			expression="execution(* com.zhukaige.service.*.*(..))" id="pointcut" />
+			expression="execution(* com.liang.service.*.*(..))" id="pointcut" />
 		<!-- 关联事务 -->
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="pointcut" />
 
@@ -95,7 +88,7 @@
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<!-- basePackage :mapper接口所在的包 -->
 		<!-- todo -->
-		<property name="basePackage" value="com.zhukaige.dao"></property>
+		<property name="basePackage" value="com.liang.dao"></property>
 
 	</bean>
 

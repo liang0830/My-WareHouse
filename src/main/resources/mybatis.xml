@@ -7,9 +7,9 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 <!-- 别名配置 -->
  <typeAliases>
     <!-- todo -->
-   <package name="com.zhukaige.entity"/>
+   <package name="com.liang.entity"/>
    <!-- todo -->
-   <package name="com.zhukaige.vo"/>
+   <package name="com.liang.vo"/>
  </typeAliases>
  
  

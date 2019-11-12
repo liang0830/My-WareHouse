@@ -1,10 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.zhukaige.cms</groupId>
-  <artifactId>zhukaige-cms</artifactId>
+  <groupId>com.liang.cms</groupId>
+  <artifactId>liang-cms</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
-  <description>这是我们公司打造大一个非常优秀的CMS系统</description>
+  <description>CMS系统</description>
   
  <!-- 定义主要版本号 -->
 	<properties>
@@ -36,11 +36,6 @@
   <dependencies>
   
   	<!--  自己的工具类  -->
-  	<dependency>
-  		<groupId>com.zhuzhiguang.utils</groupId>
-  		<artifactId>zhukzhiguang-utils</artifactId>
-  		<version>0.0.1-SNAPSHOT</version>
-  	</dependency>
   	
   	<!-- spring 及springMVC -->
 		<dependency>
@@ -268,7 +263,12 @@
 			<artifactId>gson</artifactId>
 			<version>2.8.5</version>
 		</dependency>
-	</dependencies>
+		<dependency>
+			<groupId>liang.utils</groupId>
+			<artifactId>liang-utils</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+  </dependencies>
   
   
   <!-- 构建项目 -->
