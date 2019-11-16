@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.la.mapper.CompanyMapper">
+	
+	<resultMap type="com.la.beans.Company" id="getMap">
+		<id column="id" property="id"/>
+		<result column="name" property="name"/>
+		<result column="corporation" property="corporation"/>
+		<result column="address" property="address"/>
+		<result column="capital" property="capital"/>
+		<result column="regist_no" property="regist_no"/>
+		<result column="tid" property="tid"/>
+		<result column="period" property="period"/>
+		<result column="created" property="created"/>
+		<association property="types" javaType="com.la.beans.Type">
+			<id column="tid" property="tid"/>
+			<result column="tname" property="tname"/>
+		</association>
+	</resultMap>
+	
+	<select id="getList" resultMap="getMap">
+		select * from biz_company a left join biz_type b on a.tid=b.tid
+		<where>
+			<if test="c1!=null">
+				a.capital >= #{c1}
+			</if>
+			<if test="c2!=null">
+				a.capital &lt;= #{c2}
+			</if>
+			<if test="mohu!=null and mohu!=''">
+				name like '%${mohu}%'
+			</if>
+		</where>
+	</select>
+	
+	
+	<insert id="add">
+		insert into biz_company set name=#{name},corporation=#{corporation},address=#{address},capital=#{capital},
+		regist_no=#{regist_no},tid=#{tid},created=#{created},period=#{period}
+	</insert>
+	
+</mapper>
